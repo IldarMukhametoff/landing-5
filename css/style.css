@@ -327,7 +327,7 @@ body {
   }
 }
 
-@media (max-height: 560px) {
+@media (max-height: 580px) {
   .main-block__body {
     margin: 350px 0 0 0;
   }
@@ -342,6 +342,12 @@ body {
 @media (max-height: 400px) {
   .main-block__body {
     margin: 250px 0 0 0;
+  }
+}
+
+@media (max-height: 360px) {
+  .main-block__body {
+    margin: 180px 0 0 0;
   }
 }
 
