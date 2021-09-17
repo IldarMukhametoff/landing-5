@@ -327,7 +327,7 @@ body {
   }
 }
 
-@media (max-height: 540px) {
+@media (max-height: 560px) {
   .main-block__body {
     margin: 350px 0 0 0;
   }
