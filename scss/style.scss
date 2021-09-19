@@ -51,6 +51,9 @@ body{
 	align-items: center;
 	color:#000;
 	border-radius: 25px;
+	font-family: $font-Playfair;
+	font-size: 16px;
+	text-transform: capitalize;
 }
 .container{
 	max-width: 1190px;
@@ -176,46 +179,41 @@ body{
 		margin: 0 0 60px 0;
 	}
 }
-.main-block{
-	position: relative;
-	padding:$header-height 0 0 0;
+.main{
+	position: absolute;
+	top:0;
 	left:0;
 	width: 100%;
 	height: 100%;
-	z-index: 1;
-	&::after{
-		content: '';
-		position: absolute;
-		top:0;
-		left:0;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-		background: linear-gradient(transparent, #000);
-		opacity: 0.8;
+	display: flex;
+	flex-direction: column;
+}
+.main-block{
+	flex:1 0 100%;
+	position:relative;
+	margin:$header-height 0 0 0;
+	padding: 0 0 142px 0;
+	@media (max-height:767px) {
+		padding: 0 0 80px 0;
+	}
+	@media (max-height:640px) {
+		padding: 0 0 45px 0;
 	}
 	&__container{
+		position: relative;
+		z-index: 2;
+		display: flex;
 		max-width: 970px;
+		height: 100%;
+		align-items: flex-end;
 	}
-	&__body{
-		padding: 470px 0 142px;
+	&__wrapper{
+		flex:0 0 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		@media (max-width:1200px) {
-			padding: 400px 0 100px;
-		}
-		@media (max-width:1024px) {
-			padding: 360px 0 80px;
-		}
-		@media (max-width:968px) {
-			padding: 320px 0 60px;
-		}
-		@media (max-width:767px) {
-			padding: 280px 0 40px;
-		}
-		@media (max-width:640px) {
-			padding: 200px 0 40px;
+		@media (max-width:580px){
+			flex-direction: column;
 		}
 	}
 	&__bg{
@@ -224,39 +222,45 @@ body{
 		left:0;
 		width: 100%;
 		height: 100%;
-	}
-	&__title-block,&__btn{
-		position: relative;
-		z-index: 2;
+		&::after{
+			content: '';
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(transparent, #000);
+			opacity: 0.8;
+		}
 	}
 	&__title-block{
-		color: #fff;
-		@media (max-width:420px) {
-			margin: 0 0 50px;
+		@media (max-width:580px){
+			margin:0 0 30px 0;
 		}
+	}
+	&__title,&__subtitle{
+		color:#fff;
 	}
 	&__title{
 		font-family: $font-Playfair;
-		font-weight: 400;
 		font-size: 65px;
-		@media (max-width:1024px) {
+		line-height: normal;
+		@media (max-width:767px){
+			font-size: 50px;
+			
+		}
+		@media (max-width:640px){
 			font-size: 40px;
 		}
-		@media (max-width:767px) {
-			font-size: 32px;
-		}
-		@media (max-width:640px) {
-			font-size: 24px;
+		@media (max-width:580px){
+			font-size: 30px;
 		}
 	}
 	&__subtitle{
 		font-size: 31px;
-		@media (max-width:767px) {
-			font-size: 24x;
+		line-height: 36px/31px*100%;
+		@media (max-width:580px){
+			font-size: 20px;
 		}
-		@media (max-width:640px) {
-			font-size: 18px;
-		}
-		line-height: 36px;
 	}
 }
