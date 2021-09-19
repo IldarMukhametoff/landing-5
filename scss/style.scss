@@ -311,6 +311,11 @@ body{
 	font-size: 21px;
 	line-height: 31px/21px*100%;
 }
+.text-content{
+	font-size: 14px;
+	line-height: 31px/14px*100%;
+	color: #666666;
+}
 .about{
 	@include section-padding(80px);
 	&__container{
@@ -357,9 +362,6 @@ body{
 		flex: 0 0 500px/1100px*100%;
 	}
 	&__text{
-		font-size: 14px;
-		line-height: 31px/14px*100%;
-		color: #666666;
 		@media (max-width:1024px) {
 			text-align: justify;
 		}
@@ -368,5 +370,59 @@ body{
 		@media (max-width:1024px) {
 			flex: 0 0 100%;
 		}
+	}
+}
+.practice{
+	background: #000;
+	@include section-padding(35px)
+	&__container{
+		max-width: 1100px;
+	}
+	&__title-block{
+		margin: 0 0 100px 0;
+	}
+	&__content{
+		padding: 0 0 0 111px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@media (max-width:1024px) {
+			padding: 0;
+		}
+	}
+	&__item{
+		flex:0 0 46.956%;
+		display: flex;
+		margin: 0 0 65px 0;
+		@media (max-width:1024px) {
+			flex: 0 0 100%;
+		}
+	}
+	&__icon{
+		margin: 0 30px 0 0;
+		i{
+			color:#e8bf5d;
+			font-size: 45px;
+		}
+		@media (max-width:540px) {
+			margin: 0 15px 0 0;
+			i{
+				font-size: 30px;
+			}
+		}
+	}
+	&__title-content{
+		margin: 0 0 15px 0;
+		@media (max-width:540px) {
+			font-size: 16px;
+		}
+	}
+	&__text-content{
+		@media (max-width:540px) {
+			font-size: 12px;
+		}
+	}
+	&__title,&__title-content,&__text-content{
+		color:#fff;
 	}
 }
