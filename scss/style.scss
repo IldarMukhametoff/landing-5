@@ -1,4 +1,7 @@
 @import "_null";
+@mixin section-padding($paddingbottom){
+	padding: 100px 0 $paddingbottom 0;
+}
 $header-height:90px;
 $header-height-mob:50px;
 $font-Playfair:"Playfair Display";
@@ -27,6 +30,20 @@ body{
 		}
 	}
 }
+.title-block{
+	position: relative;
+	padding-left: 20px;
+	&::before{
+		content: '';
+		position: absolute;
+		top:0;
+		left:0;
+		display:block;
+		width: 2px;
+		height: 100%;
+		background: #dcb558;
+	}
+}
 .title,.subtitle{
 	font-family: $font-Playfair;
 	font-weight: 400;
@@ -36,11 +53,30 @@ body{
 	line-height: 44.84px/ 30.89px * 100%;
 	color:#000;
 	text-transform: capitalize;
+	@media (max-width:767px) {
+		font-size: 24px;
+	}
+	@media (max-width:600px) {
+		font-size: 20px;
+	}
 }
 .subtitle{
 	font-size: 20.92px;
 	line-height: 30.89px/ 20.92px * 100%;
 	color:#b9b9b9;
+	width: 60%;
+	@media (max-width:900px) {
+		width: 100%;
+	}
+	@media (max-width:767px) {
+		font-size: 16px;
+	}
+	@media (max-width:600px) {
+		font-size: 14px;
+	}
+	@media (max-width:480px) {
+		font-size: 12px;
+	}
 }
 .btn{
 	width: 181px;
@@ -237,6 +273,9 @@ body{
 		}
 	}
 	&__title-block{
+		&::before{
+			background: #fff;
+		}
 		@media (max-width:580px){
 			margin:0 0 30px 0;
 		}
@@ -264,6 +303,70 @@ body{
 		line-height: 36px/31px*100%;
 		@media (max-width:580px){
 			font-size: 20px;
+		}
+	}
+}
+.title-content{
+	font-family: $font-Playfair;
+	font-size: 21px;
+	line-height: 31px/21px*100%;
+}
+.about{
+	@include section-padding(80px);
+	&__container{
+		max-width: 1100px;
+	}
+	&__title-block{
+		margin: 0 0 65px 0;
+	}
+	&__content{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__history{
+		flex:0 0 566px/1100px*100%;
+	}
+	&__title-content{
+		margin: 0 0 30px 0;
+		@media (max-width:1024px) {
+			text-align: center;
+		}
+	}
+	&__row{
+		display: flex;
+		margin: 0 0 35px;
+	}
+	&__year{
+		font-size: 21px;
+		line-height: 31px/21px*100%;
+		font-weight: 700;
+		flex: 0 0 70px;
+	}
+	&__year-text{
+		font-size: 16px;
+		line-height: 21px/16px*100%;
+		@media (max-width:600px) {
+			font-size: 14px;
+		}
+		@media (max-width:480px) {
+			font-size: 12px;
+		}
+	}
+	&__expertise{
+		flex: 0 0 500px/1100px*100%;
+	}
+	&__text{
+		font-size: 14px;
+		line-height: 31px/14px*100%;
+		color: #666666;
+		@media (max-width:1024px) {
+			text-align: justify;
+		}
+	}
+	&__item{
+		@media (max-width:1024px) {
+			flex: 0 0 100%;
 		}
 	}
 }
