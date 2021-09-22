@@ -3,7 +3,7 @@
 	padding: 100px 0 $paddingbottom 0;
 }
 %slideLeft{
-	transform: translate(-100%);
+	transform: translate(-104%);
 	opacity: 0;
 	transition: all 0.8s ease 0s;
 	&.active{
@@ -41,6 +41,7 @@ body{
 .title-block{
 	position: relative;
 	padding-left: 20px;
+	overflow:hidden;
 	&::before{
 		content: '';
 		position: absolute;

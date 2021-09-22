@@ -72,8 +72,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title, .subtitle, .main-block__title, .main-block__subtitle {
-  -webkit-transform: translate(-100%);
-          transform: translate(-100%);
+  -webkit-transform: translate(-104%);
+          transform: translate(-104%);
   opacity: 0;
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
@@ -116,6 +116,7 @@ body {
 .title-block {
   position: relative;
   padding-left: 20px;
+  overflow: hidden;
 }
 
 .title-block::before {
