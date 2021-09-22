@@ -560,6 +560,13 @@ body {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.about__content.active {
+  opacity: 1;
 }
 
 .about__history {
@@ -650,6 +657,13 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.practice__content.active {
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {
@@ -745,8 +759,34 @@ body {
   margin: 0 0 20px 0;
 }
 
+.lawyers .item-lawyers.active .lawyers__img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.lawyers .item-lawyers.active .lawyers__title-content, .lawyers .item-lawyers.active .lawyers__text-content {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+
+.lawyers__img {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
 .lawyers__img img {
   width: 100%;
+}
+
+.lawyers__title-content, .lawyers__text-content {
+  -webkit-transform: translate(0, 50px);
+          transform: translate(0, 50px);
+  opacity: 0;
+  -webkit-transition: all 1s ease 0.3s;
+  transition: all 1s ease 0.3s;
 }
 
 @media (max-width: 560px) {
@@ -991,12 +1031,42 @@ body {
   border-bottom: 3px solid #e8bf5d;
 }
 
+.publications .item-publications.active .publications__img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.publications .item-publications.active .publications__title-content, .publications .item-publications.active .publications__subtitle-content, .publications .item-publications.active .publications__text-content, .publications .item-publications.active .publications__item-footer {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+
+.publications__img {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.publications__img img {
+  width: 100%;
+}
+
 .publications__img {
   margin: 0 0 30px 0;
 }
 
 .publications__img img {
   width: 100%;
+}
+
+.publications__title-content, .publications__subtitle-content, .publications__text-content {
+  -webkit-transform: translate(0, -50px);
+          transform: translate(0, -50px);
+  opacity: 0;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
 }
 
 .publications__title-block-content {
@@ -1036,6 +1106,11 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transform: translate(0, 50px);
+          transform: translate(0, 50px);
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+  opacity: 0;
 }
 
 .publications__item-footer a {
@@ -1060,6 +1135,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.faq__tabs.active {
+  opacity: 1;
 }
 
 @media (max-width: 900px) {

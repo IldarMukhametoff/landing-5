@@ -352,6 +352,11 @@ body{
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		opacity: 0;
+		transition: all 2s ease 0s;
+		&.active{
+			opacity: 1;
+		}
 	}
 	&__history{
 		flex:0 0 566px/1100px*100%;
@@ -407,6 +412,11 @@ body{
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		opacity: 0;
+		transition: all 2s ease 0s;
+		&.active{
+			opacity: 1;
+		}
 		@media (max-width:1024px) {
 			padding: 0;
 		}
@@ -466,12 +476,26 @@ body{
 	&__column{
 		margin: 0 0 20px 0;
 	}
+	.item-lawyers{
+		&.active .lawyers__img{
+			transform: scale(1);
+		}
+		&.active .lawyers__title-content,&.active .lawyers__text-content{
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+	}
 	&__img{
+		transform: scale(0);
+		transition: all 0.3s ease 0s;
 		img{
 			width:100%;
 		}
 	}
 	&__title-content,&__text-content{
+		transform: translate(0, 50px);
+		opacity: 0;
+		transition: all 1s ease 0.3s;
 		@media (max-width:560px) {
 			text-align: center;
 		}
@@ -634,12 +658,31 @@ body{
 	.item-publications{
 		padding: 0 0 30px 0;
 		border-bottom: 3px solid #e8bf5d;
+		&.active .publications__img{
+			transform: scale(1);
+		}
+		&.active .publications__title-content,&.active .publications__subtitle-content, &.active .publications__text-content,&.active .publications__item-footer{
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+	}
+	&__img{
+		transform: scale(0);
+		transition: all 0.3s ease 0s;
+		img{
+			width:100%;
+		}
 	}
 	&__img{
 		margin: 0 0 30px 0;
 		img{
 			width: 100%;
 		}
+	}
+	&__title-content,&__subtitle-content,&__text-content{
+		transform: translate(0, -50px);
+		opacity: 0;
+		transition: all 1s ease 0s;
 	}
 	&__title-block-content{
 		margin: 0 0 35px 0;
@@ -666,6 +709,9 @@ body{
 	&__item-footer{
 		display: flex;
 		justify-content: space-between;
+		transform: translate(0, 50px);
+		transition: all 1s ease 0s;
+		opacity: 0;
 		a{
 			color:#000;
 			font-size: 16px;
@@ -683,6 +729,11 @@ body{
 	}
 	&__tabs{
 		display: flex;
+		opacity: 0;
+		transition: all 2s ease 0s;
+		&.active{
+			opacity: 1;
+		}
 		@media (max-width:900px) {
 			flex-wrap: wrap;
 		}
